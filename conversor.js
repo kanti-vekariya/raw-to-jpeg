@@ -35,4 +35,4 @@ const convertCr3ToJpgFile = (imagePath, convertInto, targetedDir) => {
   }
 };
 
-convertCr3ToJpgFile("./images/asd06.arw", ".jpg", "./output/");
+convertCr3ToJpgFile(process.argv[2], process.argv[3],process.argv[4]);
