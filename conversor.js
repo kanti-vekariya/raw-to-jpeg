@@ -8,7 +8,7 @@ const convertCr3ToJpgFile = (imagePath, convertInto, targetedDir) => {
   }
   const imageFileName = imagePath.replace(/^.*[\\\/]/, "").split(".")[0];
   const fileExtension = imagePath.replace(/^.*[\\\/]/, "").split(".")[1];
-  if (["arw", "ARW"].includes(fileExtension)) {
+  if (fileExtension.toLowerCase() === "arw") {
     const buf = fs.readFileSync(imagePath);
     const thumbnail = dcraw(buf, { extractThumbnail: true });
     fs.writeFileSync(
